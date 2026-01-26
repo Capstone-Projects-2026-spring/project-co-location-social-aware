@@ -42,5 +42,6 @@ Discuss what you need to develop this project. This includes background informat
 [Noah Peles](https://github.com/No-ha63) •
 [Henry Schoemer](https://github.com/henryschoemer) •
 [Dary Demchuk](https://github.com/D4RY-exe) •
+[Dominique Bissey](https://github.com/dominiquebissey) •
 
 </div>
