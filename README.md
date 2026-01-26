@@ -39,5 +39,6 @@ Discuss what you need to develop this project. This includes background informat
 
 [//]: # (Replace with your collaborators)
 [Dylan Brown](https://github.com/tup80439) • 
+[Noah Peles](https://github.com/No-ha63) •
 
 </div>
