@@ -48,6 +48,6 @@ Discuss what you need to develop this project. This includes background informat
 [Dary Demchuk](https://github.com/D4RY-exe) •
 [Dominique Bissey](https://github.com/dominiquebissey) • 
 [Nadia Sharifi](https://github.com/nadia-sharifi) • 
-[Ian Thorpe](https://github.com/IanThorpeTemple) • 
+[Ian Thorpe](https://github.com/IanThorpeTemple)
 
 </div>
