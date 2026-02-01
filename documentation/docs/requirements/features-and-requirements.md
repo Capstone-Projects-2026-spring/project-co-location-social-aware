@@ -12,7 +12,7 @@ sidebar_position: 4
 * Users must make a student profile to use the Co-Location Socially Aware application
   * Users must select their guardian to connect the accounts.
   * A verification email will be sent to the guardian to verify and confirm the student profile.
-* Admin and studnet users will be authenticated when logging into the system.
+* Admin and student users will be authenticated when logging into the system.
 * Users can select and manage their interests on their student profile.
   * "Managing" includes the users ability to choose their likes and dislikes which will be saved to their profile, and can be changed at any time.
 * Users can connect and interact with other users in their area using BLE beacons. 
@@ -24,3 +24,13 @@ sidebar_position: 4
   * Student user's activity will be marked if it contributes to the completion of the given goal. 
 
 ## Nonfunctional Requirements
+* The application will prioritize accessibility and ease of use for AAC users with wide-ranging motor and cognitive abilities.
+* The AAC keyboard interface will be simple, visually clear, and designed specifically for touch-based interaction.
+* The system will securely handle user account data using industry-standard practices.
+    * The application will authenticate users using established authentication mechanisms.
+    * The application will protect data in transit using secure communication protocols.
+    * Location data will be used only as necessary to support proximity-based interactions.
+* The system will support multiple users simultaneously within the same beacon-defined area in addition to supporting at least ten concurrent users total.
+    * The use of a cloud service provider will allow the application to scale on demand.
+* The application will be accessible on tablets and mobile devices commonly used as AAC devices.
+* The application will promote social connection without pressuring users to participate.
