@@ -31,7 +31,7 @@ Describe the initial design concept: Hardware/software architecture, programming
 
 ## Background
 
-The background will contain a more detailed description of the product and a comparison to existing similar projects/products. A literature search should be conducted and the results listed. Proper citation of sources is required. If there are similar open-source products, you should state whether existing source will be used and to what extent. If there are similar closed-source/proprietary products, you should state how the proposed product will be similar and different.
+Similar products include [TouchChat](https://www.assistiveware.com/products/proloquo4text) and [Proloquo4Text](https://touchchatapp.com/). These are both closed-source products that aim to build a profile for AAC users so they can be more efficient. Co-location socially aware builds a profile which encourages people to interact with other AAC users by suggesting shared interests. TouchChat allows users to create profiles, save settings, and vocabulary, allowing them to switch users quickly. Proloquo4Text also saves profiles, but it saves stored phrases, conversation blocks and does predictions. Co-location socially aware is like these products in that it creates a profile, but this profile saves the users' interests. However, this app also incorporates the unique aspect of Bluetooth low energy beacons letting two users connect, giving them speech suggestions based on their common interests. Co-location socially aware will only be like the other apps in the sense that they have profiles. 
 
 ## Required Resources
 

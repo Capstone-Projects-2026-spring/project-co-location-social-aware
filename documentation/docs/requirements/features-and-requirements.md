@@ -25,3 +25,13 @@ sidebar_position: 4
 * Admin and student users will be authenticated when logging into the system.
 
 ## Nonfunctional Requirements
+* The application will prioritize accessibility and ease of use for AAC users with wide-ranging motor and cognitive abilities.
+* The AAC keyboard interface will be simple, visually clear, and designed specifically for touch-based interaction.
+* The system will securely handle user account data using industry-standard practices.
+    * The application will authenticate users using established authentication mechanisms.
+    * The application will protect data in transit using secure communication protocols.
+    * Location data will be used only as necessary to support proximity-based interactions.
+* The system will support multiple users simultaneously within the same beacon-defined area in addition to supporting at least ten concurrent users total.
+    * The use of a cloud service provider will allow the application to scale on demand.
+* The application will be accessible on tablets and mobile devices commonly used as AAC devices.
+* The application will promote social connection without pressuring users to participate.
