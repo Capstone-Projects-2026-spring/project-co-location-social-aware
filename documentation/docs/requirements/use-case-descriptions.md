@@ -5,7 +5,7 @@ sidebar_position: 5
 # Use-case descriptions
 
 ## Use-Case 1: Admin Profile
-*As a guardian, I want to be able to set a profile and administer a child's profile*
+*As a guardian, I want to be able to set a profile and administer a child's profile.*
 1. Guardian opens app.
 2. App prompts 'returning' or 'new'.
 3. Guardian presses 'new'.
@@ -18,27 +18,27 @@ sidebar_position: 5
 
 ## Use-Case 2: Student Account Creation
 *As a user, I want a customized profile.*
-1. User opens app on AAC device.
+1. User or Admin opens app on AAC device.
 2. App prompts 'returning' or 'new'.
-3. User presses 'new'.
-4. User is prompted "child or adult?"
-5. User clicks child.
-4. User is sent to an account creation page.
-5. User can set name, likes, dislikes, age/grade, etc.
-6. User selects guardian from profile picture.
-7. User sets password as a set of images; for example, it can be a horse, dog, then 5.
+3. User or Admin presses 'new'.
+4. User or Admin is prompted "child or adult?"
+5. User or Admin clicks child.
+4. User or Admin is sent to an account creation page.
+5. User or Admin can set name, likes, dislikes, age/grade, etc.
+6. User or Admin selects guardian from profile picture.
+7. OPTIONAL: User or Admin sets password as a set of images; for example, it can be a horse, dog, then 5.
 
 
 ## Use-Case 3: Student Log-in
 *As a user, I want to be able to access my account.*
-1. User opens app on AAC device.
+1. User or Admin opens app on AAC device.
 2. App prompts 'returning' or 'new'.
-3. User presses 'returning'.
-4. User is redirected to a screen with different names.
-5. User selects their name.
-6. User is redirected to screen to input password.
-7. User inputs their image password.
-8. User is redirected to their personal
+3. User or Admin presses 'returning'.
+4. User or Admin is redirected to a screen with different names.
+5. User or Admin selects their name.
+6. OPTIONAL: User or Admin is redirected to screen to input password
+7. OPTIONAL: User or Admin inputs their image password.
+8. User or Admin is redirected to their personal page.
 
 ## Use-Case 4: 1-on-1 Social Interaction
 *As a user, I want to be able to interact with the people around me.*
@@ -53,7 +53,7 @@ sidebar_position: 5
 9. User B can respond: "T-Rex."
 
 ## Use-Case 5: Relatability
-*As a user, I want to be able to find common interests*
+*As a user, I want to be able to find common interests.*
 1. User A has a profile that marks cats as a liked interest.
 2. User B has a profile that also mark cats as a liked interest.
 3. User A approachs User B.
