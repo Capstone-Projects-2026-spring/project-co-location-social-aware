@@ -1,7 +1,8 @@
 ---
-sidebar_position: 6
+sidebar_label: Database Diagrams
+sidebar_position: 1
+description: Entity-Relationship Diagram and Relational Schema
 ---
-
 
 
 # Database Documentation
