@@ -36,7 +36,7 @@ sidebar_position: 5
 3. User or Admin presses 'returning'.
 4. User or Admin is redirected to a screen with different names.
 5. User or Admin selects their name.
-6. OPTIONAL: User or Admin is redirected to screen to input password
+6. OPTIONAL: User or Admin is redirected to screen to input password.
 7. OPTIONAL: User or Admin inputs their image password.
 8. User or Admin is redirected to their personal page.
 
@@ -66,14 +66,15 @@ sidebar_position: 5
 ## Use-Case 6: Group Interaction
 *As a user, I want to be able to interact with a group.*
 1. User A approaches multiple students.
-2. AAC device detects multiple beacons nearby.
-3. AAC device suggests: "Can I play too?" / "Whose turn is it?" /etc.
+2. Beacon detects multiple devices nearby.
+2. Beacon relays information to AAC device.
+3. AAC device suggests: "Can I play too?" / "Whose turn is it?" / etc.
 
 ## Use-Case 7: Setting Goals
 *As a guardian, I want to be able to set socialization goals for a child.*
 1. Guardian opens app.
 2. Guardian logs in using email and password.
 3. Guardian clicks on child A, whom they want to set a goal for.
-4. They set the goal "Initiate 2 peer interactions."
+4. They set the goal "Initiate 2 peer interactions".
 5. Child A's AAC device prioritizes suggesting greetings.
-6. Every time Child A clicks a greeting while another student's beacon is nearby, it counts towards the goal.
+6. Every time Child A clicks a greeting while another student's device is nearby, it counts towards the goal.
