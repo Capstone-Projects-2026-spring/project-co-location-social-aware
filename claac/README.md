@@ -8,16 +8,21 @@ Here is the [Expo documentation](https://docs.expo.dev/):
 1. Install dependencies
 
    ```bash
-   npm install
+   npm install -g eas-cli
    ```
 
-2. Start the app
+2. Create Expo account here: 
+https://expo.dev/signup?utm_term=&utm_campaign=Starter+NDR-OTA-Performance+Max&utm_source=adwords&utm_medium=ppc&hsa_acc=6617584976&hsa_cam=23485562072&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=23490229162&gclid=EAIaIQobChMIgKiNrdHekgMVYmRHAR1thxM2EAAYASAAEgK9tvD_BwE
+
+3. run ```eas login``` to login to your Expo account in your terminal
+
+4. Start the app
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+5. In the output, you'll find options to open the app - ***Select s*** to run in Expo Go and then ***i*** if you want to run on iOS simulator.
 
 - [development build](https://docs.expo.dev/develop/development-builds/introduction/)
 - [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)

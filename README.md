@@ -1,9 +1,9 @@
 <div align="center">
 
-# Co-location (Social Aware)
-[![Report Issue on Jira](https://img.shields.io/badge/Report%20Issues-Jira-0052CC?style=flat&logo=jira-software)](https://temple-cis-projects-in-cs.atlassian.net/jira/software/c/projects/SAA/issues?jql=project%20%3D%20SAA%20ORDER%20BY%20created%20DESC)
-[![Deploy Docs](https://github.com/ApplebaumIan/tu-cis-4398-docs-template/actions/workflows/deploy.yml/badge.svg)](https://github.com/Capstone-Projects-2026-spring/project-co-location-social-aware/actions/workflows/deploy.yml)
-[![Documentation Website Link](https://img.shields.io/badge/-Documentation%20Website-brightgreen)](https://capstone-projects-2026-spring.github.io/project-co-location-social-aware)
+# Co-location (Social Awareness)
+[![Report Issue on Jira](https://img.shields.io/badge/Report%20Issues-Jira-0052CC?style=flat&logo=jira-software)](https://temple-cis-projects-in-cs.atlassian.net/jira/software/c/projects/DT/issues)
+[![Deploy Docs](https://github.com/ApplebaumIan/tu-cis-4398-docs-template/actions/workflows/deploy.yml/badge.svg)](https://github.com/ApplebaumIan/tu-cis-4398-docs-template/actions/workflows/deploy.yml)
+[![Documentation Website Link](https://img.shields.io/badge/-Documentation%20Website-brightgreen)](https://capstone-projects-2026-spring.github.io/project-co-location-social-aware/docs/intro)
 
 
 </div>
@@ -11,15 +11,17 @@
 
 ## Keywords
 
-Section 3, AAC, Mobile App, Bluetooth
+Section 2
+
+Mobile App, React Native, Expo, Accessibility, Augmentative and Alternative Communication (AAC), Bluetooth.
 
 ## Project Overview
 
-The goal of this project is to design an AAC keyboard that will make suggestions to the user based on the area they are located. To the users, this is ultimatly to encourage the users to interact with one another and explore a mutual interest between each other. 
+The goal of this project is to design an AAC keyboard that will make suggestions to the user based on other users within where they are located. To the users, the goal is to encourage social interactions and explore a mutual interests. To reach this goal, the app tracks the locations of each user to recommend communication options based.
 
 ## Project Abstract
 
-This document proposes a novel application of a text message (SMS or Email) read-out and hands-free call interacted between an Android Smartphone and an infotainment platform (headunit) in a car environment. When a phone receives an SMS or Email, the text message is transferred from the phone to the headunit through a Bluetooth connection. On the headunit, user can control which and when the received SMS or E-mail to be read out through the in-vehicle audio system. The user may press one button on the headunit to activate the hands-free feature to call back the SMS sender.
+This project introduces the use of Bluetooth (BLE) beacons to facilitate fluid social connections between users with accessibility issues. These users include young children and those with non-verbal disabilities, meaning a goal of the project is to seamlessly and intuitively suggest helpful words for these use-cases. 
 
 ## High Level Requirement
 
