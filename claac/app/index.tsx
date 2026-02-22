@@ -1,4 +1,5 @@
-import { Text, View, Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
+import AACBoard from "../components/AACBoard";
 
 const styles = StyleSheet.create({
   columns: {
@@ -12,6 +13,7 @@ const styles = StyleSheet.create({
   },
 });
 
+
 export default function Index() {
   return (
     <View
@@ -22,6 +24,7 @@ export default function Index() {
         style={styles.propellerhat}
         source= {require("../assets/images/propellerhat.png")}
       />
+      <AACBoard />
     </View>
   );
 }
