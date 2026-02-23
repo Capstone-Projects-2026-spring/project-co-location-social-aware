@@ -84,8 +84,14 @@ yarn-error.*
 
 # local env files
 .env*.local
+backend/venv/
 
 # typescript
 *.tsbuildinfo
 
 # @end expo-cli
+
+# pycache and sqlite
+__pycache__/
+*.pyc
+db.sqlite3
