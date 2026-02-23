@@ -18,35 +18,32 @@ sidebar_position: 5
 
 ## Use-Case 2: Student Account Creation
 *As a user, I want a customized profile.*
-1. User or Admin opens app on AAC device.
+1. Admin opens app on AAC device.
 2. App prompts 'returning' or 'new'.
-3. User or Admin presses 'new'.
-4. User or Admin is prompted "child or adult?"
-5. User or Admin clicks child.
-4. User or Admin is sent to an account creation page.
-5. User or Admin can set name, likes, dislikes, age/grade, etc.
-6. User or Admin selects guardian from profile picture.
-7. OPTIONAL: User or Admin sets password as a set of images; for example, it can be a horse, dog, then 5.
-
+3. Admin presses 'new'.
+4. Admin is prompted "child or adult?"
+5. Admin clicks child.
+4. Admin is redirrected to an account creation page.
+5. Admin can set name, likes, dislikes, age/grade, etc.
+6. Admin selects guardian from drop down list of names of guardians on device.
 
 ## Use-Case 3: Student Log-in
-*As a user, I want to be able to access my account.*
-1. User or Admin opens app on AAC device.
+*As a guardian, I want my child to be able to access their account.*
+1. Admin opens app on AAC device.
 2. App prompts 'returning' or 'new'.
-3. User or Admin presses 'returning'.
-4. User or Admin is redirected to a screen with different names.
-5. User or Admin selects their name.
-6. OPTIONAL: User or Admin is redirected to screen to input password.
-7. OPTIONAL: User or Admin inputs their image password.
-8. User or Admin is redirected to their personal page.
+3. Admin presses 'returning'.
+4. Admin is redirected to a screen with different names.
+5. Admin selects student's name.
+8. Admin is redirected to the user's personal page.
+9. User is given AAC device.
 
 ## Use-Case 4: 1-on-1 Social Interaction
 *As a user, I want to be able to interact with the people around me.*
 1. User A has a profile with the following likes: dolls, drawing, cats.
 2. User B has a profile with the following likes: dinosaurs, painting.
 3. User A approaches User B.
-4. AAC app suggests to User B sentences regarding drawing, cats and dolls.
-5. AAC app suggests to User A sentences regarding dinosaurs and painting.
+4. AAC app suggests to User B drawing, cats and dolls.
+5. AAC app suggests to User A dinosaurs and painting.
 6. User B chooses: "What do you like to draw?"
 7. User A can respond: "Cats."
 8. User A chooses: "What's your favorite dinosaur?"
