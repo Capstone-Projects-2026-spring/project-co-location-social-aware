@@ -90,3 +90,8 @@ backend/venv/
 *.tsbuildinfo
 
 # @end expo-cli
+
+# pycache and sqlite
+__pycache__/
+*.pyc
+db.sqlite3
