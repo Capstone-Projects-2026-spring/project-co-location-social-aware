@@ -1,38 +1,32 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Text, View, Image, StyleSheet } from "react-native";
+import { Text, View, Image, StyleSheet, Pressable } from "react-native";
 import GridDisplayScreen from "./gridDisplay";
+import { styles } from "../../styles/homePageStyle";
+import { Button } from "@react-navigation/elements";
 
 const bottomTab = createBottomTabNavigator();
 
-const styles = StyleSheet.create({
-  columns: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  propellerhat: {
-    width: 100,
-    height: 100,
-  },
-  navtab: {
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 10,
-    tintColor: "#000000",
-    width: 50,
-    height: 50,
-  },
-});
-
 export function HomeScreen() {
   return (
-    <View style={styles.columns}>
-      <Text>Hi! Welcome to Co-Location Aware AAC (CLAAC)!</Text>
+    <View style={styles.container}>
+      <Text style = {styles.title}>Welcome to Co-Location Aware AAC (CLAAC)!</Text>
       <Image
-        style={styles.propellerhat}
+        style={styles.logo}
         source={require("../../assets/images/propellerhat.png")}
       />
+      <Text style = {styles.subtitle}>CLAAC is an AAC grid app that uses BLE beacons to gain location information
+         about a user. Using this location information, the AAC keyboard will connect the user to other users in the area. With this, 
+         AAC device will suggest interests of the users around your location. This will in turn encourage users to socialize, engage in
+          new interests, and possibly facilitate activities that is interesting to other users and themself.</Text>
+      <View style={styles.buttonContainer}>
+        <Pressable style={styles.button}>
+        <Text style={styles.buttonText}>Login</Text>
+      </Pressable>
+      <Pressable style={styles.button}>
+        <Text style={styles.buttonText}>Register</Text>
+      </Pressable>
+      </View>
     </View>
   );
 }
