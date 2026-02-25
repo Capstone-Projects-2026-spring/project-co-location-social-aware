@@ -4,6 +4,7 @@ import { Text, View, Image, StyleSheet, Pressable } from "react-native";
 import GridDisplayScreen from "./gridDisplay";
 import { styles } from "../../styles/homePageStyle";
 import { Button } from "@react-navigation/elements";
+import { router, useRouter } from "expo-router";
 
 const bottomTab = createBottomTabNavigator();
 
@@ -20,10 +21,18 @@ export function HomeScreen() {
          AAC device will suggest interests of the users around your location. This will in turn encourage users to socialize, engage in
           new interests, and possibly facilitate activities that is interesting to other users and themself.</Text>
       <View style={styles.buttonContainer}>
-        <Pressable style={styles.button}>
+        <Pressable style={styles.button}
+          onPress={() => {
+            console.log("Login button pressed");
+            router.push("/login");
+          }}>
         <Text style={styles.buttonText}>Login</Text>
       </Pressable>
-      <Pressable style={styles.button}>
+      <Pressable style={styles.button}
+        onPress={() => {
+          console.log("Register button pressed");
+          router.push("/register");
+        }}>
         <Text style={styles.buttonText}>Register</Text>
       </Pressable>
       </View>
