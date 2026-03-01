@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, FlatList, Button } from 'react-native';
+import { Button, FlatList, ImageSourcePropType, StyleSheet, View } from 'react-native';
+import { AACNode, initialVocabulary } from '../data/vocabulary';
 import GridButton from './GridButton';
-import { initialVocabulary, AACNode } from '../data/vocabulary';
 
-export default function AACBoard() {
+type AACBoardProps = {
+  onWordAdded?: (word: string, image: ImageSourcePropType) => void;
+};
+
+export default function AACBoard({ onWordAdded }: AACBoardProps) {
   const [currentWords, setCurrentWords] = useState<AACNode[]>(initialVocabulary);
-  const [history, setHistory] = useState<AACNode[][]>([]); 
+  const [history, setHistory] = useState<AACNode[][]>([]);
 
   const handlePress = (node: AACNode) => {
     if (node.type === 'category' && node.subWords) {
@@ -13,6 +17,7 @@ export default function AACBoard() {
       setCurrentWords(node.subWords);
     } else {
       console.log(`Speaking: ${node.word}`);
+      onWordAdded?.(node.word, node.image);
     }
   };
 
