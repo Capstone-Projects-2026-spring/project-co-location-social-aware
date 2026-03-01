@@ -36,6 +36,7 @@ export default function SentenceBar({ words, onRemoveWord, onClear, onSpeak }: S
               <Text style={styles.chipRemove}>×</Text>
             </Pressable>
           ))
+        )}
       </ScrollView>
       {words.length > 0 && (
         <View style={styles.actions}>
