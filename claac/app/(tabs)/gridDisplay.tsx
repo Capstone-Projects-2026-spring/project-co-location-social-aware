@@ -1,7 +1,8 @@
 import AACBoard from "@/components/AACBoard";
 import PreferredWords from "@/components/PreferredWords";
-import React, { useState, useEffect } from "react";
-import { View, StyleSheet, ActivityIndicator } from "react-native";
+import SentenceBar, { SentenceWord } from "@/components/SentenceBar";
+import React, { useEffect, useState } from "react";
+import { ActivityIndicator, ImageSourcePropType, StyleSheet, View } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -13,6 +14,16 @@ const styles = StyleSheet.create({
 export default function Grid() {
   const [words, setWords] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [sentence, setSentence] = useState<SentenceWord[]>([]);
+
+  const addWord = (word: string, image: ImageSourcePropType) =>
+    setSentence(prev => [...prev, { word, image }]);
+  const removeWord = (index: number) => setSentence(prev => prev.filter((_, i) => i !== index));
+  const clearSentence = () => setSentence([]);
+  const speakSentence = () => {
+    const text = sentence.map(s => s.word).join(' ');
+    console.log(`Speaking: ${text}`);
+  };
 
   // just for proof of concept right now
   // obviously we will change this once auth and profile management is implemented
@@ -46,7 +57,8 @@ export default function Grid() {
 
   return (
     <View style={styles.container}>
-      <AACBoard/>
+      <SentenceBar words={sentence} onRemoveWord={removeWord} onClear={clearSentence} onSpeak={speakSentence} />
+      <AACBoard onWordAdded={addWord} />
       <PreferredWords words={words} />
     </View>
   );
