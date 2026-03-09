@@ -24,19 +24,20 @@ function ChildAccount() {
   );
 }
 
-export default function RegisterScreen() { // Must be 'export default'
+export default function RegisterScreen() {
   return (
-    <View style={{flex:1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Register Screen</Text>
-      <View style={styles.buttonContainer}>
-                    <Pressable style={styles.button}
-                      onPress={() => {
-                        console.log("Login Back button pressed");
-                        router.back();
-                      }}>
-                    <Text style={styles.buttonText}>Back to Homepage</Text>
-                  </Pressable>
-              </View>
-    </View>
+    <Tab.Navigator>
+
+      <Tab.Screen 
+        name="Adult" 
+        component={AdultAccount} 
+      />
+
+      <Tab.Screen 
+        name="Child" 
+        component={ChildAccount} 
+      />
+
+    </Tab.Navigator>
   );
 }
