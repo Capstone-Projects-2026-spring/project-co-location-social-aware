@@ -3,6 +3,7 @@ import PreferredWords from "@/components/PreferredWords";
 import SentenceBar, { SentenceWord } from "@/components/SentenceBar";
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, ImageSourcePropType, StyleSheet, View } from "react-native";
+import * as Speech from 'expo-speech';
 
 const styles = StyleSheet.create({
   container: {
@@ -23,6 +24,7 @@ export default function Grid() {
   const speakSentence = () => {
     const text = sentence.map(s => s.word).join(' ');
     console.log(`Speaking: ${text}`);
+    Speech.speak(text, { rate: 0.8 });
   };
 
   // just for proof of concept right now
