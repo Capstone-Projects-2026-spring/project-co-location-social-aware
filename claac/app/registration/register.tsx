@@ -5,24 +5,9 @@ import { styles } from "../styles/homePageStyle";
 import { Button } from "@react-navigation/elements";
 import { router, useRouter } from "expo-router";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import ChildRegisterScreen from "./childReg";
 
 const Tab = createMaterialTopTabNavigator();
-
-function AdultAccount() {
-  return (
-    <View style={{flex:1, justifyContent:"center", alignItems:"center"}}>
-      <Text>Adult Account Creation</Text>
-    </View>
-  );
-}
-
-function ChildAccount() {
-  return (
-    <View style={{flex:1, justifyContent:"center", alignItems:"center"}}>
-      <Text>Child Account Creation</Text>
-    </View>
-  );
-}
 
 export default function RegisterScreen() {
   return (
@@ -30,12 +15,12 @@ export default function RegisterScreen() {
 
       <Tab.Screen 
         name="Adult" 
-        component={AdultAccount} 
+        component={AdultRegisterScreen} 
       />
 
       <Tab.Screen 
         name="Child" 
-        component={ChildAccount} 
+        component={ChildRegisterScreen} 
       />
 
     </Tab.Navigator>
