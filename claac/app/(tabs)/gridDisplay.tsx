@@ -38,6 +38,9 @@ export default function Grid() {
       console.log("Fetching preferred words for user:", userId);
       const response = await fetch(`http://localhost:8000/api/users/${userId}/preferred-words/`);
       const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.detail);
+      }
       setWords(data.preferred_words);
       console.log("Preferred words fetched:", data.preferred_words);
     } catch (error) {
@@ -50,7 +53,7 @@ export default function Grid() {
   if (loading) {
     return (
       <View style={styles.container}>
-        <ActivityIndicator size="large" color="#0000ff" />
+        <ActivityIndicator testID="loading-indicator" size="large" color="#0000ff" />
       </View>
     );
   }
