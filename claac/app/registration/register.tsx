@@ -6,6 +6,7 @@ import { Button } from "@react-navigation/elements";
 import { router, useRouter } from "expo-router";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import ChildRegisterScreen from "./childReg";
+import AdminRegisterScreen from "./adminReg";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -15,7 +16,7 @@ export default function RegisterScreen() {
 
       <Tab.Screen 
         name="Adult" 
-        component={AdultRegisterScreen} 
+        component={AdminRegisterScreen} 
       />
 
       <Tab.Screen 

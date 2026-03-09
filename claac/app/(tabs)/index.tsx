@@ -31,7 +31,7 @@ export function HomeScreen() {
       <Pressable style={styles.button}
         onPress={() => {
           console.log("Register button pressed");
-          router.push("/register");
+          router.push("/registration/register");
         }}>
         <Text style={styles.buttonText}>Register</Text>
       </Pressable>
