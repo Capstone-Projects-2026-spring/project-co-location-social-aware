@@ -1,5 +1,9 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .models import User
+from .serializers import UserSerializer
 
 # Create your views here.
 
@@ -16,3 +20,32 @@ def preferred_words(request, user_id):
         return JsonResponse({'status': 'success', 'user_id': user_id, 'preferred_words': preferred_words})
     else:
         return JsonResponse({'status': 'error', 'message': 'Invalid request method'}, status=400)
+
+@api_view(['POST'])
+def register_user(request):
+
+    serializer = UserSerializer(data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+
+    return Response(serializer.errors)
+
+@api_view(['POST']) #look into hashing passwords and authentication tokens for security in the future
+def login_user(request):
+
+    email = request.data.get("email")
+    password = request.data.get("password")
+
+    try:
+        user = User.objects.get(email=email, password=password)
+
+        return Response({
+            "message": "Login successful",
+            "user_id": user.id,
+            "role": user.role
+        })
+
+    except User.DoesNotExist:
+        return Response({"error": "Invalid credentials"}, status=400)
