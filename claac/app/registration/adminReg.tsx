@@ -11,7 +11,7 @@ export default function AdminRegisterScreen() {
 
     try {
 
-      const response = await fetch("http://localhost:8000/api/users/", {
+      const response = await fetch("http://localhost:8000/api/users/", { //CHANGE LOCALHOST TO YOUR LOCAL IP FOR IT TO WORK
         method: "POST",
         headers: {
           "Content-Type": "application/json"
