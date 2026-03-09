@@ -7,11 +7,11 @@ export default function AdminRegisterScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const createAdmin = async () => {
+  /* const createAdmin = async () => {
 
     try {
 
-      const response = await fetch("http://localhost:8000/api/users/", { //CHANGE LOCALHOST TO YOUR LOCAL IP FOR IT TO WORK
+      const response = await fetch("http://127.0.0.1:8000/api/users/", { //CHANGE LOCALHOST TO YOUR LOCAL IP FOR IT TO WORK
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -30,9 +30,9 @@ export default function AdminRegisterScreen() {
 
     } catch (error) {
       console.error("Error creating admin:", error);
-    }
+    } 
 
-  };
+  }; */
 
   return (
     <View style={styles.container}>
@@ -60,7 +60,8 @@ export default function AdminRegisterScreen() {
 
       <Pressable
         style={styles.button}
-        onPress={createAdmin}
+        //onPress={createAdmin}
+        onPress = {() => alert("Admin account creation button pressed; information not sent.")}
       >
         <Text style={styles.buttonText}>Create Account</Text>
       </Pressable>
