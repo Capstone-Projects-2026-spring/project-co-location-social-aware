@@ -1,9 +1,12 @@
+import token
+
 from django.shortcuts import render
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import User
 from .serializers import UserSerializer
+from rest_framework.authtoken.models import Token
 
 # Create your views here.
 
@@ -27,10 +30,14 @@ def register_user(request):
     serializer = UserSerializer(data=request.data)
 
     if serializer.is_valid():
-        serializer.save()
-        return Response(serializer.data)
+        user = serializer.save()
+        token, created = Token.objects.get_or_create(user=user)
+        return Response({
+            "user": serializer.data,
+            "token": token.key
+        })
 
-    return Response(serializer.errors)
+    return Response(serializer.errors, status=400)
 
 @api_view(['POST']) #look into hashing passwords and authentication tokens for security in the future
 def login_user(request):

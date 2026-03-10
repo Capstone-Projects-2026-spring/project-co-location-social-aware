@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, Pressable, StyleSheet } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function AdminRegisterScreen() {
 
@@ -11,7 +12,7 @@ export default function AdminRegisterScreen() {
 
     try {
 
-      const response = await fetch("http://localhost:8000/api/users/register/", { //CHANGE LOCALHOST TO YOUR LOCAL IP FOR IT TO WORK
+      const response = await fetch("http://IPHERE:8000/api/register/", { //replace with your ip and run server from backend folder using 'python manage.py runserver'
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -25,7 +26,7 @@ export default function AdminRegisterScreen() {
       });
 
       const data = await response.json();
-
+      await AsyncStorage.setItem("token", data.token);
       console.log("Admin created:", data);
 
     } catch (error) {
@@ -60,8 +61,8 @@ export default function AdminRegisterScreen() {
 
       <Pressable
         style={styles.button}
-        //onPress={createAdmin}
-        onPress = {() => alert("Admin account creation button pressed.")}
+        onPress={createAdmin}
+        //onPress = {() => alert("Admin account creation button pressed.")}
       >
         <Text style={styles.buttonText}>Create Account</Text>
       </Pressable>
