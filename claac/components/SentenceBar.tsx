@@ -1,3 +1,4 @@
+import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { Image, ImageSourcePropType, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
@@ -32,8 +33,6 @@ export default function SentenceBar({ words, onRemoveWord, onClear, onSpeak }: S
               onPress={() => onRemoveWord(index)}
             >
               <Image source={item.image} style={styles.chipImage} />
-              <Text style={styles.chipText}>{item.word}</Text>
-              <Text style={styles.chipRemove}>×</Text>
             </Pressable>
           ))
         )}
@@ -44,13 +43,13 @@ export default function SentenceBar({ words, onRemoveWord, onClear, onSpeak }: S
             style={({ pressed }) => [styles.actionButton, { backgroundColor: pressed ? '#248A3D' : '#34C759' }]}
             onPress={onSpeak}
           >
-            <Text style={styles.actionText}>Speak</Text>
+            <Ionicons name="volume-high" size={20} color="#FFF" />
           </Pressable>
           <Pressable
             style={({ pressed }) => [styles.actionButton, { backgroundColor: pressed ? '#C0392B' : '#FF3B30' }]}
             onPress={onClear}
           >
-            <Text style={styles.actionText}>Clear</Text>
+            <Ionicons name="trash" size={20} color="#FFF" />
           </Pressable>
         </View>
       )}
@@ -62,63 +61,42 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    minHeight: 110,
+    minHeight: 64,
     borderBottomWidth: 1,
     borderBottomColor: '#DDD',
     backgroundColor: '#F8F8F8',
     paddingHorizontal: 8,
-    paddingVertical: 8,
+    paddingVertical: 4,
   },
   placeholder: {
     color: '#AAA',
-    fontSize: 16,
+    fontSize: 14,
     fontStyle: 'italic',
     alignSelf: 'center',
   },
   chip: {
     alignItems: 'center',
     backgroundColor: '#007AFF',
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    paddingVertical: 8,
-    marginRight: 8,
-    minWidth: 90,
+    borderRadius: 8,
+    padding: 4,
+    marginRight: 6,
   },
   chipPressed: {
     backgroundColor: '#0056b3',
   },
   chipImage: {
-    width: 60,
-    height: 60,
+    width: 40,
+    height: 40,
     resizeMode: 'contain',
-    marginBottom: 4,
-  },
-  chipText: {
-    color: '#FFF',
-    fontSize: 15,
-    fontWeight: '600',
-    textAlign: 'center',
-  },
-  chipRemove: {
-    color: 'rgba(255,255,255,0.7)',
-    fontSize: 14,
-    lineHeight: 16,
-    marginTop: 2,
   },
   actions: {
     flexDirection: 'column',
-    gap: 6,
+    gap: 4,
     marginLeft: 8,
   },
   actionButton: {
     borderRadius: 8,
-    paddingHorizontal: 12,
-    paddingVertical: 6,
+    padding: 8,
     alignItems: 'center',
-  },
-  actionText: {
-    color: '#FFF',
-    fontSize: 13,
-    fontWeight: '600',
   },
 });
