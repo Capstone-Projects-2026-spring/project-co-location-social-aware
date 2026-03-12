@@ -5,6 +5,7 @@ import GridDisplayScreen from "./gridDisplay";
 import { styles } from "../../styles/homePageStyle";
 import { Button } from "@react-navigation/elements";
 import { router, useRouter } from "expo-router";
+import Profile from "../profile";
 
 const bottomTab = createBottomTabNavigator();
 
@@ -62,6 +63,18 @@ export default function Tabs() {
           tabBarIcon: () => (
             <Image
               source={require("../../assets/images/gridIcon.png")}
+              style={styles.navtab}
+            />
+          ),
+        }}
+      />
+      <bottomTab.Screen 
+        name="Profile" 
+        component={Profile} 
+        options={{
+          tabBarIcon: () => (
+            <Image
+              source={require("../../assets/images/homeIcon.png")}
               style={styles.navtab}
             />
           ),
