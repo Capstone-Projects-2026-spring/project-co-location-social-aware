@@ -4,7 +4,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function AdminRegisterScreen() {
 
-  const [name, setName] = useState("");
+  const [username, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,13 +12,13 @@ export default function AdminRegisterScreen() {
 
     try {
 
-      const response = await fetch("http://IPHERE:8000/api/register/", { //replace with your ip and run server from backend folder using 'python manage.py runserver'
+      const response = await fetch("IPHERE:8000/api/register/", { //replace IPHERE with your IP, run server from backend folder using 'python manage.py runserver 0.0.0.0:8000'
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          name: name,
+          username: username,
           email: email,
           password: password,
           role: "admin"
@@ -26,9 +26,12 @@ export default function AdminRegisterScreen() {
       });
 
       const data = await response.json();
-      await AsyncStorage.setItem("token", data.token);
-      console.log("Admin created:", data);
-
+      if (data.token) {
+        await AsyncStorage.setItem("token", data.token);
+        console.log("Admin created:", data);
+      } else {
+        console.log("Registration error:", data);
+      }
     } catch (error) {
       console.error("Error creating admin:", error);
     } 
