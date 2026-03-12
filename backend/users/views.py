@@ -1,6 +1,5 @@
 #from django.shortcuts import render
 import uuid
-
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -8,7 +7,7 @@ from rest_framework.authtoken.models import Token
 from .models import User
 from .serializers import UserSerializer
 from django.contrib.auth import authenticate #look into using Django's built-in authentication system for hashing passwords
-
+from .auth import get_user_from_token
 
 # Create your views here.
 
@@ -36,7 +35,6 @@ def register_user(request):
         user = serializer.save()
         print("USER CREATED:", user)
         print("USER TYPE:", type(user))
-        #token, created = Token.objects.get_or_create(user=user)
         
         token = str(uuid.uuid4())
         user.token = token
@@ -48,6 +46,21 @@ def register_user(request):
         })
     print("SERIALIZER ERRORS:", serializer.errors)
     return Response(serializer.errors, status=400)
+
+@api_view(['GET'])
+def profile(request):
+
+    user = get_user_from_token(request)
+
+    if not user:
+        return Response({"error": "Unauthorized"}, status=401)
+
+    return Response({
+        "id": user.id,
+        "username": user.username,
+        "email": user.email,
+        "role": user.role
+    })
 
 @api_view(['POST']) #look into hashing passwords and authentication tokens for security in the future
 def login_user(request):
