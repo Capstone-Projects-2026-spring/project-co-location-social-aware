@@ -22,7 +22,7 @@ export default function LoginScreen() { // Must be 'export default'
                             <Pressable style={styles.button}
                               onPress={() => {
                                 console.log("Login Register button pressed");
-                                router.replace("/register");
+                                router.replace("/registration/register");
                               }}>
                             <Text style={styles.buttonText}>Don't Have and Account? Register Here!!</Text>
                           </Pressable>
