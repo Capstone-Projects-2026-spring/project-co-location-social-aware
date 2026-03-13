@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TextInput, Pressable, StyleSheet } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
+import { styles } from "../../styles/registerPageStyle";
 
 export default function AdminRegisterScreen() {
 
@@ -68,7 +69,6 @@ export default function AdminRegisterScreen() {
       <Pressable
         style={styles.button}
         onPress={createAdmin}
-        //onPress = {() => alert("Admin account creation button pressed.")}
       >
         <Text style={styles.buttonText}>Create Account</Text>
       </Pressable>
@@ -76,32 +76,3 @@ export default function AdminRegisterScreen() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    justifyContent:"center",
-    alignItems:"center",
-    padding:20
-  },
-  title:{
-    fontSize:24,
-    marginBottom:30
-  },
-  input:{
-    width:"90%",
-    borderWidth:1,
-    padding:12,
-    marginBottom:15,
-    borderRadius:6
-  },
-  button:{
-    backgroundColor:"#007AFF",
-    padding:15,
-    borderRadius:6
-  },
-  buttonText:{
-    color:"white",
-    fontWeight:"bold"
-  }
-});
