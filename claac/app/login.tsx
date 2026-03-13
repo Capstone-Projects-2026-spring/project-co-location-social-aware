@@ -1,14 +1,31 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Text, View, Image, StyleSheet, Pressable } from "react-native";
-import { styles } from "../styles/homePageStyle";
+import { Text, View, Image, StyleSheet, Pressable, TextInput } from "react-native";
+import { styles } from "../styles/loginPageStyle";
 import { Button } from "@react-navigation/elements";
 import { router, useRouter } from "expo-router";
 
 export default function LoginScreen() { // Must be 'export default'
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Login Screen</Text>
+    <View style = {styles.container}>
+      <Text style = {styles.title}>Login</Text>
+
+      {/* Email Input */}
+      <TextInput style = {styles.input} placeholder="Email" />
+
+      {/* Password Input */}
+      <TextInput style = {styles.input} placeholder="Password" secureTextEntry />
+
+      {/* Register Button */}
+      <Pressable style = {styles.registerButton}
+        onPress = {() => {
+          console.log("Register button pressed");
+          router.replace("/register");
+        }}>
+        <Text style = {styles.registerButtonText}>Don't have an Account? Register Here!</Text>
+      </Pressable>
+
+      {/* Login Button */}
       <View style={styles.buttonContainer}>
               <Pressable style={styles.button}
                 onPress={() => {
@@ -28,6 +45,9 @@ export default function LoginScreen() { // Must be 'export default'
                           </Pressable>
                       </View>
     </View>
+
     
+  </View>
+
   );
 }
