@@ -5,7 +5,7 @@ import { styles } from "../styles/loginPageStyle";
 import { Button } from "@react-navigation/elements";
 import { router, useRouter } from "expo-router";
 
-export default function LoginScreen() { // Must be 'export default'
+export default function LoginScreen() {
   return (
     <View style = {styles.container}>
       <Text style = {styles.title}>Login</Text>

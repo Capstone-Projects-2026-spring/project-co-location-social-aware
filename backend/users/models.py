@@ -13,5 +13,7 @@ class User(models.Model):
     room = models.ForeignKey('beacons.Beacon', null=True, on_delete=models.SET_NULL)
     token = models.CharField(max_length=255, null=True, blank=True)
 
+    guardian = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL, limit_choices_to={'role': 'admin'}) #guardian field for child users
+
     def __str__(self):
         return self.email

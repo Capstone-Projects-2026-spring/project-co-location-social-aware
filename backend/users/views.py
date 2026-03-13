@@ -26,7 +26,7 @@ def preferred_words(request, user_id):
         return JsonResponse({'status': 'error', 'message': 'Invalid request method'}, status=400)
 
 @api_view(['POST'])
-def register_user(request):
+def register_admin(request):
 
     print("REQUEST DATA:", request.data)
     serializer = UserSerializer(data=request.data)
@@ -54,16 +54,24 @@ def profile(request):
 
     if not user:
         return Response({"error": "Unauthorized"}, status=401)
-
-    return Response({
+    
+    if role == 'admin':
+        return Response({
         "id": user.id,
         "username": user.username,
         "email": user.email,
         "role": user.role
     })
+    if role == 'child':
+        return Response({
+        "id": user.id,
+        "username": user.username,
+        "role": user.role,
+        "guardian": user.guardian.id if user.guardian else None
+    })
 
 @api_view(['POST']) #look into hashing passwords and authentication tokens for security in the future
-def login_user(request):
+def login_admin(request):
 
     email = request.data.get("email")
     password = request.data.get("password")
