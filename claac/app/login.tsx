@@ -20,34 +20,30 @@ export default function LoginScreen() { // Must be 'export default'
       <Pressable style = {styles.registerButton}
         onPress = {() => {
           console.log("Register button pressed");
-          router.replace("/register");
+          router.replace("/registration/register");
         }}>
         <Text style = {styles.registerButtonText}>Don't have an Account? Register Here!</Text>
       </Pressable>
 
       {/* Login Button */}
       <View style={styles.buttonContainer}>
-              <Pressable style={styles.button}
-                onPress={() => {
-                  console.log("Login Back button pressed");
-                  router.back();
-                }}>
-              <Text style={styles.buttonText}>Back</Text>
-            </Pressable>
-        </View>
+                    <Pressable style={styles.loginButton}
+                      onPress={() => {
+                        console.log("Login Back button pressed");
+                        router.back();
+                      }}>
+                    <Text style={styles.loginButtonText}>Back</Text>
+                  </Pressable>
+              </View>
         <View style={styles.buttonContainer}>
-                            <Pressable style={styles.button}
+                            <Pressable style={styles.loginButton}
                               onPress={() => {
                                 console.log("Login Register button pressed");
                                 router.replace("/registration/register");
                               }}>
-                            <Text style={styles.buttonText}>Don't Have and Account? Register Here!!</Text>
+                            <Text style={styles.loginButtonText}>Don't Have and Account? Register Here!!</Text>
                           </Pressable>
                       </View>
     </View>
-
-    
-  </View>
-
   );
 }
