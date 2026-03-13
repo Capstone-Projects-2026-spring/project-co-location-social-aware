@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from .models import User
-from .serializers import UserSerializer
+from .serializers import AdminRegisterSerializer, ChildRegisterSerializer, UserSerializer
 from django.contrib.auth import authenticate #look into using Django's built-in authentication system for hashing passwords
 from .auth import get_user_from_token
 
@@ -28,14 +28,11 @@ def preferred_words(request, user_id):
 @api_view(['POST'])
 def register_admin(request):
 
-    print("REQUEST DATA:", request.data)
-    serializer = UserSerializer(data=request.data)
+    serializer = AdminRegisterSerializer(data=request.data)
 
     if serializer.is_valid():
         user = serializer.save()
-        print("USER CREATED:", user)
-        print("USER TYPE:", type(user))
-        
+    
         token = str(uuid.uuid4())
         user.token = token
         user.save()
@@ -44,7 +41,24 @@ def register_admin(request):
             "user": serializer.data,
             "token": token
         })
-    print("SERIALIZER ERRORS:", serializer.errors)
+    return Response(serializer.errors, status=400)
+
+@api_view(['POST'])
+def register_child(request):
+
+    serializer = ChildRegisterSerializer(data=request.data)
+
+    if serializer.is_valid():
+        user = serializer.save()
+
+        token = str(uuid.uuid4())
+        user.token = token
+        user.save()
+
+        return Response({
+            "user": serializer.data,
+            "token": token
+        })
     return Response(serializer.errors, status=400)
 
 @api_view(['GET'])

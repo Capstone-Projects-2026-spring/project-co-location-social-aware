@@ -8,7 +8,7 @@ class User(models.Model):
 
     username = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
-    email = models.CharField(max_length=255)
+    email = models.CharField(max_length=255, null=True, blank=True)
     role = models.CharField(max_length=255, choices=ROLE_CHOICES, default="admin")
     room = models.ForeignKey('beacons.Beacon', null=True, on_delete=models.SET_NULL)
     token = models.CharField(max_length=255, null=True, blank=True)
