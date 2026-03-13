@@ -1,5 +1,13 @@
-from django.shortcuts import render
+#from django.shortcuts import render
+import uuid
 from django.http import JsonResponse
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.authtoken.models import Token
+from .models import User
+from .serializers import UserSerializer
+from django.contrib.auth import authenticate #look into using Django's built-in authentication system for hashing passwords
+from .auth import get_user_from_token
 
 # Create your views here.
 
@@ -16,3 +24,58 @@ def preferred_words(request, user_id):
         return JsonResponse({'status': 'success', 'user_id': user_id, 'preferred_words': preferred_words})
     else:
         return JsonResponse({'status': 'error', 'message': 'Invalid request method'}, status=400)
+
+@api_view(['POST'])
+def register_user(request):
+
+    print("REQUEST DATA:", request.data)
+    serializer = UserSerializer(data=request.data)
+
+    if serializer.is_valid():
+        user = serializer.save()
+        print("USER CREATED:", user)
+        print("USER TYPE:", type(user))
+        
+        token = str(uuid.uuid4())
+        user.token = token
+        user.save()
+        
+        return Response({
+            "user": serializer.data,
+            "token": token
+        })
+    print("SERIALIZER ERRORS:", serializer.errors)
+    return Response(serializer.errors, status=400)
+
+@api_view(['GET'])
+def profile(request):
+
+    user = get_user_from_token(request)
+
+    if not user:
+        return Response({"error": "Unauthorized"}, status=401)
+
+    return Response({
+        "id": user.id,
+        "username": user.username,
+        "email": user.email,
+        "role": user.role
+    })
+
+@api_view(['POST']) #look into hashing passwords and authentication tokens for security in the future
+def login_user(request):
+
+    email = request.data.get("email")
+    password = request.data.get("password")
+
+    try:
+        user = User.objects.get(email=email, password=password)
+
+        return Response({
+            "message": "Login successful",
+            "user_id": user.id,
+            "role": user.role
+        })
+
+    except User.DoesNotExist:
+        return Response({"error": "Invalid credentials"}, status=400)
